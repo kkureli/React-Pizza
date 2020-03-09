@@ -1,14 +1,29 @@
-import React from "react"
+import React from "react";
 
-const Pizza = () => {
-  return(
+const Pizza = props => {
+  return (
     <tr>
-      <td>{"Replace Me With Pizza Topping"}</td>
-      <td>{"Replace Me With Pizza Size"}</td>
-      <td>{"Replace Me With Vegatarian"}</td>
-      <td><button type="button" className="btn btn-primary">Edit Pizza</button></td>
+      <td>{props.top}</td>
+      <td>{props.size}</td>
+      <td>{props.veg.toString()}</td>
+      <td>
+        <button
+          onClick={props.editHandler}
+          type="button"
+          className="btn btn-primary"
+        >
+          Edit Pizza
+        </button>
+        <button
+          onClick={props.deleteHandler}
+          type="button"
+          className="btn ml-3 btn-primary"
+        >
+          Delete Pizza
+        </button>
+      </td>
     </tr>
-  )
-}
+  );
+};
 
-export default Pizza
+export default Pizza;
